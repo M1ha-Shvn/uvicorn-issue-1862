@@ -1,0 +1,13 @@
+---
+version: '3.7'
+
+services:
+  test_app:
+    image: uvicorn-test-app:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000/tcp"
+    volumes:
+      - .:/app/src
